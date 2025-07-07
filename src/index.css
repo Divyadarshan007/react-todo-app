@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    background-color: #d7d7d7;
+}
+
+.back-color{
+    background-color: #f6f6f6;
+    border-radius: 10px;
+}
+tr{
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.scrollbar{
+    scrollbar-width: none;
+    height: 420px;
+}
