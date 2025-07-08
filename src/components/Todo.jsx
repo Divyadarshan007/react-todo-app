@@ -29,7 +29,7 @@ const Todo = () => {
     const [date, setDate] = useState(new Date())
     return (
         <>
-            <div className="max-w-4xl w-full  mx-auto back-color my-10">
+            <div className="max-w-4xl w-full mx-auto shadow-lg back-color my-10">
                 <div className="flex justify-between items-center p-7">
                     <div>
                         <h1 className="text-2xl font-semibold font-mono">Todo App</h1>
@@ -41,9 +41,9 @@ const Todo = () => {
                         <button className={`rounded-[7px]  ${storeValue === "completed" ? "bg-[#000] text-[#fff]" : "bg-white text-dark"} py-1 px-10 font-semibold  shadow-md `} onClick={() => setStoreValue("completed")}>Completed</button>
                     </div>
                 </div>
-                <div className="p-7  scrollbar overflow-y-auto">
-                    {tasks.length == 0 ? <div className="flex flex-col items-center justify-center">
-                        <img src="/public/59563746_9318707.jpg" alt="" width={'40%'} />
+                <div className="px-7  scrollbar overflow-y-auto">
+                    {tasks.length == 0 ? <div className="flex flex-col overflow-hidden items-center justify-center">
+                        <img src="/59563746_9318707.jpg" alt="" width={'35%'} />
                         <span className="mt-4 text-xl inline-block">No Task Yet</span>
                     </div> : <Table tasks={tasks} setterTask={setTasks} storeValue={storeValue} />}
                 </div>
