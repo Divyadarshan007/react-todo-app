@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import Table from "./Table";
+import { AnimatePresence, motion } from "motion/react";
 
 const Todo = () => {
     const [text, setText] = useState("");
@@ -40,10 +41,20 @@ const Todo = () => {
                     </div>
                 </div>
                 <div className="px-7  scrollbar overflow-y-auto">
-                    {tasks.length == 0 ? <div className="flex flex-col overflow-hidden items-center justify-center">
+
+                    {tasks.length == 0 ? <motion.div
+                        initial={{ opacity: 0, scale: 0 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{
+                            delay: 0.5,
+                            duration: 0.4,
+                            ease: "easeOut"
+                        }}
+                        className="flex flex-col overflow-hidden items-center justify-center">
                         <img src="/59563746_9318707.jpg" alt="" width={'35%'} />
                         <span className="mt-4 text-xl inline-block">No Task Yet</span>
-                    </div> : <Table tasks={tasks} setterTask={setTasks} storeValue={storeValue} />}
+                    </motion.div> : <Table tasks={tasks} setterTask={setTasks} storeValue={storeValue} />}
+
                 </div>
 
                 <form className="p-7" onSubmit={handleSubmit}>

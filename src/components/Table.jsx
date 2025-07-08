@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion"
+import { AnimatePresence, motion, } from "framer-motion"
 
 const Table = ({ tasks, setterTask, storeValue }) => {
     const [displayTask, setDisplayTask] = useState([]);
+
 
     useEffect(() => {
         let filtertask = tasks.filter((task) => {
@@ -30,19 +31,17 @@ const Table = ({ tasks, setterTask, storeValue }) => {
     }
 
     return (
-        <div  className="">
-            <div  className="relative scrollbar overflow-x-auto">
+        <div className="">
+            <div className="relative scrollbar overflow-x-auto">
                 <div className=" text-sm text-left  rtl:text-right text-gray-500 dark:text-gray-400">
                     <div className="w-full">
                         <AnimatePresence>
                             {displayTask.map((task) => {
                                 return <motion.div
-                                    initial={{
-                                        opacity: 0,
-                                        y: 25,
-                                    }}
+                                    initial={{ opacity: 0, y: 25 }}
                                     animate={{ opacity: 1, y: 0 }}
-                                    exit={{ opacity: 0, y: 25 }}
+                                    exit={{ opacity: 0, x: task.isCompleted ? -24 : 24, }}
+                                    layout
                                     key={task.id} className="bg-white px-5 shadow-sm border-b my-3 rounded-[10px] flex items-center">
 
                                     <div scope="" className="px-6 py-4 w-6/12 text-wrap text-md font-mono font-semibold text-gray-900  ">
