@@ -54,7 +54,7 @@ const Todo = () => {
                 </div>
             </div>
 
-            {/* Task List */}
+            
             <div className="px-4 sm:px-7 max-h-[500px] overflow-y-auto">
                 {tasks.length === 0 ? (
                     <motion.div
@@ -71,7 +71,7 @@ const Todo = () => {
                 )}
             </div>
 
-            {/* Input */}
+            
             <form className="p-7" onSubmit={handleSubmit}>
                 <div className="relative w-full sm:w-10/12 md:w-8/12 lg:w-6/12 mx-auto">
                     <input

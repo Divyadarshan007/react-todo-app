@@ -37,13 +37,13 @@ const Table = ({ tasks, setterTask, storeValue }) => {
                         layout
                         className="bg-white p-4 shadow-sm border-b my-3 rounded-xl flex flex-col md:flex-row md:items-center gap-4"
                     >
-                        {/* Task Name */}
+                        
                         <div className="flex-1 flex items-center gap-3 text-md font-mono font-semibold text-gray-900">
                             <span className="w-2.5 h-2.5 bg-black rounded-full inline-block"></span>
                             <span className="break-words">{task.taskName}</span>
                         </div>
 
-                        {/* Status Button */}
+                        
                         <div className="md:w-auto text-center">
                             {task.isCompleted ? (
                                 <button
@@ -62,7 +62,7 @@ const Table = ({ tasks, setterTask, storeValue }) => {
                             )}
                         </div>
 
-                        {/* Delete Button */}
+                        
                         <div className="flex justify-end md:justify-center">
                             <button
                                 className="text-xl text-red-500 hover:text-red-700"
